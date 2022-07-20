@@ -25,6 +25,9 @@ set scrolloff=5                 " Minimal number of screen lines to keep above a
 set encoding=utf8               " Sets the character encoding used inside Vim.
 set backspace=indent,eol,start  " Allow backspacing over indentation, line breaks(join lines) and starting of insert
 set timeoutlen=1000 ttimeoutlen=0
+
+" Key Mapping
+map <Caps> <Esc>
         
 
 " Plugins

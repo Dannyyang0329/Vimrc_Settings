@@ -121,3 +121,6 @@ POWERLINE_SCRIPT=/usr/share/powerline/bindings/bash/powerline.sh
 if [ -f $POWERLINE_SCRIPT ]; then
   source $POWERLINE_SCRIPT
 fi
+
+alias ls='ls --color=auto -F'
+alias cman="man -M /usr/share/man/zh_TW"

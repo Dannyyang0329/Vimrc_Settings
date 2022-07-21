@@ -9,9 +9,7 @@ set hlsearch                    " When there is a previous search pattern, highl
 set incsearch                   " While typing a search command, show where the pattern matches.
 set laststatus=2                " Always show the status line.
 set t_Co=256                    " Support 256 colors
-" For windows gvim
-set guifont=Source\ Code\ Pro\ for\ Powerline:h16
-
+set guifont=Source\ Code\ Pro\ for\ Powerline:h18
 
 " Tab & Indentation
 set smarttab                    " A tab in front of a line inserts blanks according to 'shiftwidth'.
@@ -32,11 +30,6 @@ set timeoutlen=1000 ttimeoutlen=0
 
 
 " Key Mapping
-"map <Caps> <Esc>
-" nnoremap <Caps> <Esc>
-" inoremap <Caps> <Esc>
-" vnoremap <Caps> <Esc>
-
 nnoremap <S-j> :bp<CR>
 nnoremap <S-k> :bn<CR>
         
@@ -122,9 +115,8 @@ let g:airline_theme = 'bubblegum'
 let g:airline_powerline_fonts = 1
 let g:airline_section_b = '%{strftime("%c")}'
 let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+
 
 " ===================================================================================================
 " This plug-in provides automatic closing of quotes, parenthesis, brackets, etc.

@@ -8,7 +8,7 @@ set showcmd                     " Show (partial) command in the last line of the
 set hlsearch                    " When there is a previous search pattern, highlight all its matches.
 set incsearch                   " While typing a search command, show where the pattern matches.
 set laststatus=2                " Always show the status line.
-set background=dark             " Set background color to dark.
+set t_Co=256                    " Support 256 colors
 
 " Tab & Indentation
 set smarttab                    " A tab in front of a line inserts blanks according to 'shiftwidth'.
@@ -18,6 +18,7 @@ set shiftwidth=4                " Number of spaces to use for (auto) indentation
 set smartindent                 " Do an auto indentation when starting a new line.
 
 " Useful Setting
+syntax on
 set nowrap                      " Lines will not wrap and only part of long lines will be displayed.
 set mouse=a                     " Enable the use of mouse in all modes.
 set history=100                 " A history of ':' commands, and a history of previous search patterns are remembered.
@@ -26,8 +27,15 @@ set encoding=utf8               " Sets the character encoding used inside Vim.
 set backspace=indent,eol,start  " Allow backspacing over indentation, line breaks(join lines) and starting of insert
 set timeoutlen=1000 ttimeoutlen=0
 
+
 " Key Mapping
-map <Caps> <Esc>
+"map <Caps> <Esc>
+" nnoremap <Caps> <Esc>
+" inoremap <Caps> <Esc>
+" vnoremap <Caps> <Esc>
+
+nnoremap <S-j> :bp<CR>
+nnoremap <S-k> :bn<CR>
         
 
 " Plugins
@@ -109,16 +117,25 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 let g:airline_theme = 'bubblegum'
 let g:airline_powerline_fonts = 1
+let g:airline_section_b = '%{strftime("%c")}'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 
-
 " ===================================================================================================
 " This plug-in provides automatic closing of quotes, parenthesis, brackets, etc.
 " ===================================================================================================
 Plug 'raimondi/delimitmate'
+
+
+" ===================================================================================================
+" A dark Vim/Neovim color scheme for the GUI and 16/256/true-color terminals, based on FlatColor, 
+" with colors inspired by the excellent One Dark syntax theme for the Atom text editor.
+" ===================================================================================================
+Plug 'joshdick/onedark.vim'
+let g:onedark_termcolors=256
+colorscheme onedark
 
 
 call plug#end()

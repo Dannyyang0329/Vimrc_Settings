@@ -91,6 +91,8 @@ fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+alias ls='ls --color=auto -F'
+alias cman='man -M /usr/share/man/zh_TW'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -121,6 +123,3 @@ POWERLINE_SCRIPT=/usr/share/powerline/bindings/bash/powerline.sh
 if [ -f $POWERLINE_SCRIPT ]; then
   source $POWERLINE_SCRIPT
 fi
-
-alias ls='ls --color=auto -F'
-alias cman="man -M /usr/share/man/zh_TW"

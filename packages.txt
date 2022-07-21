@@ -37,3 +37,7 @@ sudo apt install mlocate
 " in the plugin 'vim-airline'
 " ========================================================
 sudo apt-get install powerline
+
+
+sudo apt install -y vim-gtk3
+sudo apt install python3-pip

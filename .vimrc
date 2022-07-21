@@ -9,6 +9,9 @@ set hlsearch                    " When there is a previous search pattern, highl
 set incsearch                   " While typing a search command, show where the pattern matches.
 set laststatus=2                " Always show the status line.
 set t_Co=256                    " Support 256 colors
+" For windows gvim
+set guifont=Source\ Code\ Pro\ for\ Powerline:h16
+
 
 " Tab & Indentation
 set smarttab                    " A tab in front of a line inserts blanks according to 'shiftwidth'.

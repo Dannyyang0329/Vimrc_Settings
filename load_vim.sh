@@ -11,7 +11,7 @@ elif ! dpkg-query -W powerline > /dev/null  ; then
 else 
     # Backup
     mkdir ~/OriginSettings
-    if [ -e "~/.bashrc" -a -f "~/.bashrc"]; then
+    if [ -e "~/.bashrc" -a -f "~/.bashrc" ]; then
         cp ~/.bashrc ~/OriginSettings
     fi
     if [ -e "~/.vimrc" -a -f "~/.vimrc" ]; then

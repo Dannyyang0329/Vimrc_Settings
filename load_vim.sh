@@ -1,28 +1,40 @@
 #!/bin/bash
 
-# Clone vimrc and bashrc file from repository
-git clone https://github.com/Dannyyang0329/Vimrc_Settings.git
+cd ~
 
-# Backup
-mkdir ~/OriginSettings
-cp ~/Vimrc_Settings/.bashrc ~/OriginSettings
-cp ~/Vimrc_Settings/.vimrc ~/OriginSettings
-cp -r ~/Vimrc_Settings/.vim ~/OriginSettings
-touch ~/OriginSettings/README.txt
-echo -e "Two files and one directory is in the current work directory!
- 2 Files
-     * .bashrc
-     * .vimrc
- Directory
-     * .vim" >> ~/OriginSettings/README.txt
+if [ !$(dpkg-query -W git) ]; then
+    echo "Need package : git"
+    exit 1
+elif [ !$(dpkg-query -W vim-gtk3) ]; then 
+    echo "Need package : vim-gtk3"
+    exit 1
+elif [ !$(dpkg-query -W powerline) ]; then 
+    echo "Need package : powerline"
+    exit 1
+else 
+    # Clone vimrc and bashrc file from repository
+    git clone https://github.com/Dannyyang0329/Vimrc_Settings.git
 
-# Adapt settings
-cp ~/Vimrc_Settings/.bashrc ~/
-cp ~/Vimrc_Settings/.vimrc ~/
-cp -r ~/Vimrc_Settings/.vim ~/
-source ~/.bashrc
+    # Backup
+    mkdir ~/OriginSettings
+    cp ~/.bashrc ~/OriginSettings
+    cp ~/.vimrc ~/OriginSettings
+    cp -r ~/.vim ~/OriginSettings
+    touch ~/OriginSettings/README.txt
+    echo -e "Two files and one directory is in the current work directory!
+     2 Files
+         * .bashrc
+         * .vimrc
+     Directory
+         * .vim" >> ~/OriginSettings/README.txt
 
-vim -c PlugInstall
+    # Adapt settings
+    cp ~/Vimrc_Settings/.bashrc ~/
+    cp ~/Vimrc_Settings/.vimrc ~/
+    cp -r ~/Vimrc_Settings/.vim ~/
+    source ~/.bashrc
 
-echo "Setting Finish!!!"
+    vim -c PlugInstall
 
+    echo "Setting Finish!!!"
+fi

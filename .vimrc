@@ -32,6 +32,8 @@ set timeoutlen=1000 ttimeoutlen=0
 " Key Mapping
 nnoremap <S-j> :bp<CR>
 nnoremap <S-k> :bn<CR>
+nnoremap <C-a> ggVG
+vnoremap <C-c> :y+<CR>
         
 
 " Plugins

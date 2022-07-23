@@ -115,7 +115,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 let g:airline_theme = 'bubblegum'
 let g:airline_powerline_fonts = 1
-let g:airline_section_b = '%{strftime("%c")}'
+let g:airline_section_b = '%{strftime("%m/%d %H:%M")}'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 

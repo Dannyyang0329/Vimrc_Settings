@@ -30,10 +30,8 @@ else
     cp ~/Vimrc_Settings/.bashrc ~/
     cp ~/Vimrc_Settings/.vimrc ~/
     cp -r ~/Vimrc_Settings/.vim ~/
-    source ~/.bashrc
 
     vim -c PlugInstall
-    vim -c qa
 
     echo "Setting Finish!!!"
 fi

@@ -9,9 +9,6 @@ elif ! dpkg-query -W powerline > /dev/null  ; then
     echo "Need package : powerline"
     exit 1
 else 
-    # Clone vimrc and bashrc file from repository
-    # git clone https://github.com/Dannyyang0329/Vimrc_Settings.git
-
     # Backup
     mkdir ~/OriginSettings
     if [ -e "~/.bashrc" -a -f "~/.bashrc"]; then

@@ -2,10 +2,7 @@
 
 cd ~
 
-if [ !$(dpkg-query -W git) ]; then
-    echo "Need package : git"
-    exit 1
-elif [ !$(dpkg-query -W vim-gtk3) ]; then 
+if [ !$(dpkg-query -W vim-gtk3) ]; then 
     echo "Need package : vim-gtk3"
     exit 1
 elif [ !$(dpkg-query -W powerline) ]; then 
@@ -13,7 +10,7 @@ elif [ !$(dpkg-query -W powerline) ]; then
     exit 1
 else 
     # Clone vimrc and bashrc file from repository
-    git clone https://github.com/Dannyyang0329/Vimrc_Settings.git
+    # git clone https://github.com/Dannyyang0329/Vimrc_Settings.git
 
     # Backup
     mkdir ~/OriginSettings

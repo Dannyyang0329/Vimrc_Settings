@@ -2,7 +2,7 @@
 
 cd ~
 
-if [ -e "~/OriginSettings" -a -d "~/OriginSettings" ]; then
+if [ -e ~/OriginSettings -a -d ~/OriginSettings ]; then
     read -p "Do you want to delete directory ~/OriginSettings ? y/n" reply
     if [ reply = 'y' ]; then
         rm -rf ~/OriginSettings
@@ -15,7 +15,7 @@ if [ -e "~/OriginSettings" -a -d "~/OriginSettings" ]; then
     fi
 fi
 
-if [ -e "~/Vimrc_Settings" -a -d "~/Vimrc_Settings" ]; then
+if [ -e ~/Vimrc_Settings -a -d ~/Vimrc_Settings ]; then
     read -p "Do you want to delete directory ~/Vimrc_Settings ? y/n" reply
     if [ reply = 'y' ]; then
         rm -rf ~/Vimrc_Settings

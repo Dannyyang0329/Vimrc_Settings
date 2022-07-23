@@ -2,10 +2,10 @@
 
 cd ~
 
-if [ !$(dpkg-query -W vim-gtk3) ]; then 
+if ! dpkg-query -W vim-gtk3 > /dev/null  ; then 
     echo "Need package : vim-gtk3"
     exit 1
-elif [ !$(dpkg-query -W powerline) ]; then 
+elif ! dpkg-query -W powerline > /dev/null  ; then 
     echo "Need package : powerline"
     exit 1
 else 
@@ -14,16 +14,17 @@ else
 
     # Backup
     mkdir ~/OriginSettings
-    cp ~/.bashrc ~/OriginSettings
-    cp ~/.vimrc ~/OriginSettings
-    cp -r ~/.vim ~/OriginSettings
+    if [ -e "~/.bashrc" -a -f "~/.bashrc"]; then
+        cp ~/.bashrc ~/OriginSettings
+    fi
+    if [ -e "~/.vimrc" -a -f "~/.vimrc" ]; then
+        cp ~/.vimrc ~/OriginSettings
+    fi
+    if [ -e "~/.vim" -a -d "~/.vim" ]; then
+        cp -r ~/.vim ~/OriginSettings
+    fi
     touch ~/OriginSettings/README.txt
-    echo -e "Two files and one directory is in the current work directory!
-     2 Files
-         * .bashrc
-         * .vimrc
-     Directory
-         * .vim" >> ~/OriginSettings/README.txt
+    ls -alf > ~/OriginSettings/README.txt
 
     # Adapt settings
     cp ~/Vimrc_Settings/.bashrc ~/
@@ -32,6 +33,7 @@ else
     source ~/.bashrc
 
     vim -c PlugInstall
+    vim -c qa
 
     echo "Setting Finish!!!"
 fi
